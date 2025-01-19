@@ -27,9 +27,14 @@ export class AppComponent {
   imagePath: string = `assets/images/imageone.jpg`;
   isDisabled: boolean = false;
 
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean = false;
 
   toggleBtn() {
     this.isDisabled = !this.isDisabled;
+  }
+
+  toggleLogin() {
+    console.log('toggleLogin:.. ');
+    this.isLoggedIn = !this.isLoggedIn;
   }
 }
