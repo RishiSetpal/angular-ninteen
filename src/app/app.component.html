@@ -22,9 +22,52 @@
 
 
 <app-counter></app-counter>
+----------------------------------------------------------------
 
+<h1>Declaratives</h1>
+
+<h1>1. Attribute Declaratives</h1>
 
 <button (click)="isLoggedIn=!isLoggedIn">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
 <div *ngIf="isLoggedIn">
   <h1>Hello User is Logged in.. Sussfully </h1>
+</div>
+
+<div *ngFor="let item of fruitBasket; let i = index;">
+  <ul *ngIf="(i+1)%2==0">
+    <li>{{i+1}}.{{item}}</li>
+  </ul>
+</div>
+
+<p>Infosis, Capgemini, Tcs, Deloitte, Accenture, Gold man Sacks, JpMorgan</p>
+
+<select [(ngModel)]="selectedColor">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</select>
+
+<!-- <div [ngSwitch]="selectedColor">
+  <div *ngSwitchCase="expression">output</div>
+  <div *ngSwitchDefault>output2</div>
+</div> -->
+<div [ngSwitch]="selectedColor">
+  <p *ngSwitchCase="'red'">You Selected Red</p>
+  <p *ngSwitchCase="'green'">You Selected Green</p>
+  <p *ngSwitchCase="'blue'">You Selected Blue</p>
+  <!-- <p *[ngSwitchCase]="blue">You Selected Blue</p> -->
+</div>
+
+<h1>2. Structural Declaratives</h1>
+
+<h1>ngClass</h1>
+<button (click)="toggleClass()">ToggleClass</button>
+<div [ngClass]="{'highlight': isHighlighted}"> This will be highlighted..</div>
+
+<h1>ngStyle</h1>
+<button (click)="changeColor()">Change Color</button>
+<div [ngStyle]="{'color': textColor, 'font-size': fontSize }">
+  <p>
+    This will change according to textColor and font will be changed by fontsize..
+  </p>
 </div>

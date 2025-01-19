@@ -1,0 +1,12 @@
+h1 {
+    border: 2px solid blueviolet;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.highlight {
+    background: aquamarine;
+    border: 2px solid blueviolet;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
