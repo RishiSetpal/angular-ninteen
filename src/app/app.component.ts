@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { TwowaycomponentComponent } from "./twowaycomponent/twowaycomponent.component";
+import { TwowaycomponentComponent } from './twowaycomponent/twowaycomponent.component';
 import { ParentcmpComponent } from './parentcmp/parentcmp.component';
-import { CounterComponent } from "./counter/counter.component";
+import { CounterComponent } from './counter/counter.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, TwowaycomponentComponent, ParentcmpComponent, CounterComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    TwowaycomponentComponent,
+    ParentcmpComponent,
+    CounterComponent,
+    CommonModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -19,7 +27,9 @@ export class AppComponent {
   imagePath: string = `assets/images/imageone.jpg`;
   isDisabled: boolean = false;
 
-  toggleBtn () {
-    this.isDisabled = !this.isDisabled;  
+  isLoggedIn: boolean = true;
+
+  toggleBtn() {
+    this.isDisabled = !this.isDisabled;
   }
 }
