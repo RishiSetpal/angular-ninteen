@@ -71,3 +71,65 @@
     This will change according to textColor and font will be changed by fontsize..
   </p>
 </div>
+
+----------------------------------------------------------------
+
+<h1>Pipes</h1>
+<p>Pipes are used to updates as well as manipulate data on the screen</p>
+<p>Types</p>
+
+<ul> 1. Build in Pipes
+  <li> date Pipe </li>
+  <li> lowercase Pipe </li>
+  <li> uppercase Pipe </li>
+  <li> currency Pipe </li>
+  <li> SLice Pipe </li>
+</ul>
+
+<h1>Pipes in Angular</h1>
+<p>Pipes are used to transform and manipulate data on the screen.</p>
+
+<h2>Examples of Built-in Pipes</h2>
+<ul>
+  <li>
+    <strong>DatePipe:</strong>
+    <p>Original: {{ today }}</p>
+    <p>Formatted:</p>
+    <p>| date: {{ today | date }}</p>
+    <p>| date:'short': {{ today | date:'short' }}</p>
+    <p>| date:'fullDate': {{ today | date:'fullDate' }}</p>
+    <p>Custom Formatted:</p>
+    <p>| date:'fullDate': {{ today | date:'dd/mm/yyyy HH:mm:ss' }}</p>
+  </li>
+  <li>
+    <strong>LowerCasePipe:</strong>
+    <p>Original: {{ 'Hello Angular' }}</p>
+    <p>Lowercase: {{ 'Hello Angular' | lowercase }}</p>
+  </li>
+  <li>
+    <strong>UpperCasePipe:</strong>
+    <p>Original: {{ 'Hello Angular' }}</p>
+    <p>Uppercase: {{ 'Hello Angular' | uppercase }}</p>
+  </li>
+  <li>
+    <strong>CurrencyPipe:</strong>
+    <p>Original: {{ price }}</p>
+    <p>Formatted: {{ price | currency:'INR' }}</p>
+    <p>Formatted: {{ price | currency:'USD':'symbol' }}</p>
+  </li>
+  <li>
+    <strong>SlicePipe:</strong>
+    <p>Original: {{ 'Hello Angular Pipes' }}</p>
+    <p>Sliced: {{ 'Hello Angular Pipes' | slice:6:13 }}</p>
+  </li>
+  <li>
+    <strong>Add Number and JSON Object</strong>
+    <p>Number: {{ 5 }}</p>
+    <p>Object: {{ user1 | json }}</p>
+    <!-- <p>Result: {{ 5 | addNumberToJson:user1:'age' }}</p> -->
+  </li>
+</ul>
+<!-- 
+<h2>Example of a Custom Pipe</h2>
+<p>Original: {{ 'Angular' }}</p>
+<p>Reversed: {{ 'Angular' | reverse }}</p> -->

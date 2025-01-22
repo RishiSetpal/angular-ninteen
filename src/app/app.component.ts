@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TwowaycomponentComponent } from './twowaycomponent/twowaycomponent.component';
@@ -6,6 +6,19 @@ import { ParentcmpComponent } from './parentcmp/parentcmp.component';
 import { CounterComponent } from './counter/counter.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+// Custom Pipe to Add Number and JSON Object
+@Pipe({
+  name: 'addNumberToJson',
+})
+export class AddNumberToJsonPipe implements PipeTransform {
+  transform(number: number, obj: any, key: string): any {
+    if (obj && key in obj && typeof obj[key] === 'number') {
+      return number + obj[key]; // Add number and the specified key's value
+    }
+    return 'Invalid Operation'; // Return error message for invalid cases
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -50,8 +63,16 @@ export class AppComponent {
   textColor = '';
   fontSize = '';
   changeColor() {
-    
     this.textColor = this.textColor === 'black' ? 'blue' : 'red';
     this.fontSize = this.fontSize === '16px' ? '40px' : '10px';
   }
+
+  today: Date = new Date(); // Current date
+  price: number = 1500; // Example price
+
+  user1: any = {
+    name: 'John',
+    age: 18,
+    Salary: 21_00_000,
+  };
 }
