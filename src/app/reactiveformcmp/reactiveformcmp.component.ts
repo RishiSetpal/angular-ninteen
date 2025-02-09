@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormControl,
@@ -6,16 +7,27 @@ import {
   Validators,
 } from '@angular/forms';
 
+/**
+ * L4 P2 Made use of Validators & <div *ngIf = loginForm.get('username')?.invalid && loginForm.get('username')?.touched style="color: red;">
+ * CommonModule for *ngIf
+ * 09-02-2025
+ */
 @Component({
   selector: 'app-reactiveformcmp',
   // standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
-    <!-- <p>
-      reactiveformcmp works!
-    </p> -->
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <input type="text" formControlName="username" placeholder="username" />
+      <div
+        *ngIf="
+          loginForm.get('username')?.invalid &&
+          loginForm.get('username')?.touched
+        "
+        style="color: red;"
+      >
+        UserName is Required!
+      </div>
       <button type="submit">Submit</button>
     </form>
   `,
