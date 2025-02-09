@@ -6,6 +6,7 @@ import { ParentcmpComponent } from './parentcmp/parentcmp.component';
 import { CounterComponent } from './counter/counter.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveformcmpComponent } from "./reactiveformcmp/reactiveformcmp.component";
 
 // Custom Pipe to Add Number and JSON Object
 @Pipe({
@@ -30,7 +31,8 @@ export class AddNumberToJsonPipe implements PipeTransform {
     CounterComponent,
     CommonModule,
     FormsModule,
-  ],
+    ReactiveformcmpComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -133,3 +133,49 @@
 <h2>Example of a Custom Pipe</h2>
 <p>Original: {{ 'Angular' }}</p>
 <p>Reversed: {{ 'Angular' | reverse }}</p> -->
+
+
+
+<!-- 
+Forms: form's are bunch of tags that helps to view and take inputs from client 
+Angular is State Leass Framework -> No informataion Storage that can Persistance Data.
+Storage: LocalStorage (Storage persistance till Session), Firebase and InMemory Storage(DBJson)
+Data Storage Format: JSON (Simple, Fast)
+
+How to Generate components: 
+npx ng g c reactiveformcmp --inline-template --inline-style --skip-tests
+
+https://chatgpt.com/share/67a87b2c-405c-8001-86bb-ceab69745f5a
+1. 
+  Pipes 
+    Pipes are used to transform data before displaying it in the view. They work like filters and help format data dynamically.
+    
+    Built-in Pipes:
+    
+    | uppercase - Converts text to uppercase `"hello"
+    | lowercase - Converts text to lowercase `"Hello"
+    | titlecase - Capitalizes the first letter of each word `"angular framework"
+    | date      - Formats dates `today
+    | currency  - Formats numbers as currency `1000
+    | percent   - Converts numbers to percentages `0.75
+    | json      - Displays objects in JSON format {name: 'John'} → {"name":"John"}
+  & 
+  Directives(
+    1. Structural (*ngIf, *ngFor, *ngSwitch) Change the structure of the DOM <div *ngIf="condition">Show</div>
+    2. Attribute (ngClass, ngStyle))Modify behavior or appearance <p [ngClass]="{'text-red': isError}"></p>
+    3. Component Directive
+2. Life Cycle 
+3. Data Binding 
+  - Interpolation   | {{ data }}         | Component → View | Display dynamic data
+  - Property Binding| [property]="data"  | Component → View | Bind values to element properties
+  - Event Binding   | (event)="method()" | View → Component | Capture user actions (clicks, inputs)
+  - Two-way Binding | [(ngModel)]="data" | Component ↔ View | Sync data in both directions
+4. Forms 
+  (Forms in Angular help capture and validate user input efficiently. There are two types of forms in Angular)
+  - Template-Driven Forms | FormModule          | <form> in HTML Uses directives (ngModel) Simple forms
+  - Reactive Forms        | ReactiveFormsModule | Uses FormControl, FormGroup Complex forms (validation, dynamic fields)
+
+5. 
+-->
+
+<app-reactiveformcmp>
