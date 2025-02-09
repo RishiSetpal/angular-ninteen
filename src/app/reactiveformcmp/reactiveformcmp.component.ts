@@ -79,6 +79,7 @@ export class ReactiveformcmpComponent {
   });
 
   onSubmit = () => {
+    console.log('onSubmit Clicked');
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
