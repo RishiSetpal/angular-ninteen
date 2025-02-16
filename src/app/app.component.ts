@@ -7,7 +7,7 @@ import { CounterComponent } from './counter/counter.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveformcmpComponent } from './reactiveformcmp/reactiveformcmp.component';
-import { SplitwiseAppComponent } from './splitwise/splitwise-app.component';
+import { SplitwiseAppComponent } from './splitwise-app/splitwise-app.component';
 
 // Custom Pipe to Add Number and JSON Object
 @Pipe({
