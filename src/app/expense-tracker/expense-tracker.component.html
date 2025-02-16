@@ -1,0 +1,41 @@
+<p>expense-tracker works!</p>
+<div>
+    <h2>Bill Splitting App</h2>
+
+    <!-- template reference variable - #expenseForm-->
+    <form #expenseForm="ngForm" (ngSubmit)="addExpense()">
+        <div>
+            <label for="name">Name of Expense:</label>
+            <input type="text" name="name" id="name" required [(ngModel)]="newExpense.name" />
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" id="amount" required [(ngModel)]="newExpense.amount" />
+        </div>
+        <div>
+            <label for="payer">Payer:</label>
+            <input type="text" name="payer" id="payer" required [(ngModel)]="newExpense.payer" />
+        </div>
+        <button type="submit" [disabled]="!expenseForm.valid"> Add Expense </button>
+    </form>
+
+    <div *ngIf="billStarted && !continueWithCurrent" class="mt-3">
+        <button class="btn btn-success me-2" (click)="setContinueBill(true)">Continue with same Bill</button>
+        <button class="btn btn-danger" (click)="setContinueBill(false)">Start New Bill</button>
+    </div>
+
+    <div *ngIf="expenses.length>0" class="mt-4">Expense List</div>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-contents-between align-items-center"
+            *ngFor="let expense of expenses; let i = index">
+            {{expense.payer}} People: Rs.{{expense.amount}} for {{expense.name}}
+            <button class="btn btn-sm btn-danger" (click)="removeExpense(i)">Remove X</button>
+        </li>
+    </ul>
+
+    <h3 class="mt-4">Total: Rs.{{total}}</h3>
+    <h4 *ngIf="numPeople">Each Should pay: Rs.{{splitAmount.toFixed(2)}}</h4>
+
+    <button *ngIf="expenses.length > 0" (click)="startNewBill()" class="btn btn-warning mt-3">Reset Bill</button>
+
+</div>

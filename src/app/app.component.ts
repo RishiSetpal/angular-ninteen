@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveformcmpComponent } from './reactiveformcmp/reactiveformcmp.component';
 import { SplitwiseAppComponent } from './splitwise-app/splitwise-app.component';
+import { ExpenseTrackerComponent } from "./expense-tracker/expense-tracker.component";
 
 // Custom Pipe to Add Number and JSON Object
 @Pipe({
@@ -34,7 +35,8 @@ export class AddNumberToJsonPipe implements PipeTransform {
     FormsModule,
     ReactiveformcmpComponent,
     SplitwiseAppComponent,
-  ],
+    ExpenseTrackerComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
