@@ -63,3 +63,5 @@ For more information on using the Angular CLI, including detailed command refere
 Component Creation with flags
 
 npx ng g c component-name --inline-template --inline-style --skip-tests
+npx ng g c home --inline-template --inline-style --skip-tests
+npx ng g c about --inline-template --inline-style --skip-tests

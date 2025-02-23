@@ -1,5 +1,6 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TwowaycomponentComponent } from './twowaycomponent/twowaycomponent.component';
 import { ParentcmpComponent } from './parentcmp/parentcmp.component';
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveformcmpComponent } from './reactiveformcmp/reactiveformcmp.component';
 import { SplitwiseAppComponent } from './splitwise-app/splitwise-app.component';
-import { ExpenseTrackerComponent } from "./expense-tracker/expense-tracker.component";
+import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
 
 // Custom Pipe to Add Number and JSON Object
 @Pipe({
@@ -26,6 +27,7 @@ export class AddNumberToJsonPipe implements PipeTransform {
 @Component({
   selector: 'app-root',
   imports: [
+    RouterModule,
     RouterOutlet,
     HeaderComponent,
     TwowaycomponentComponent,
@@ -35,8 +37,8 @@ export class AddNumberToJsonPipe implements PipeTransform {
     FormsModule,
     ReactiveformcmpComponent,
     SplitwiseAppComponent,
-    ExpenseTrackerComponent
-],
+    ExpenseTrackerComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

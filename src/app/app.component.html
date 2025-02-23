@@ -180,6 +180,19 @@ https://chatgpt.com/share/67a87b2c-405c-8001-86bb-ceab69745f5a
   [{},{}].reduce((acc,item)=> acc+item.expense, <initialValue>0) // iterates all elements and returns a accumulator
   
 5. Splitwise App
+
+6. Routing is a specific way to reach to the destination
+why dont we use anker tag with hyperlink reference <a href="http://angularjs.org"
+Corns
+- It will create/open a new Page [Whole Request]
+- Performance Degrades
+
+Routing - Only updates the data, Not the whole page.
+[Deafualt Routing]
+[Redirection] Sometimes -> when we enter wrong Route -> It Redirects to Home Route
+
+target = self (returns same html page to load)
+
 -->
 
 <app-reactiveformcmp></app-reactiveformcmp>
@@ -187,3 +200,11 @@ https://chatgpt.com/share/67a87b2c-405c-8001-86bb-ceab69745f5a
 <app-splitwise></app-splitwise>
 
 <expense-tracker></expense-tracker>
+
+<h1>Welcome to My Angular Website</h1>
+<nav>
+  <a routerLink="/home" routerLinkActive="active">Home</a> |
+  <a routerLink="/about" routerLinkActive="active">About</a>
+</nav>
+
+<router-outlet></router-outlet>
