@@ -65,3 +65,33 @@ Component Creation with flags
 npx ng g c component-name --inline-template --inline-style --skip-tests
 npx ng g c home --inline-template --inline-style --skip-tests
 npx ng g c about --inline-template --inline-style --skip-tests
+
+---
+
+npx ng new smart-tast-manager --routing --style=scss
+
+npx ng g c admin/dashboard
+npx ng g c admin/settings
+npx ng g c admin/users
+
+npx ng g c auth/login
+npx ng g c auth/register
+
+npx ng g c shared/footer
+npx ng g c shared/navbar
+
+npx ng g c tasks/task-details
+npx ng g c tasks/task-form
+npx ng g c tasks/task-list
+
+Admin_Routes add same in all routes.
+import { Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
+import { SettingsComponent } from './settings/settings.component';
+export const routes: Routes = [
+{ path: '', component: DashboardComponent, children: [
+{ path: 'users', component: UsersComponent },
+{ path: 'settings', component: SettingsComponent }
+]}
+];
