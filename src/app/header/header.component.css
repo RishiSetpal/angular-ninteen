@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0073e6;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.search-box {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.user-icon img {
+    height: 40px;
+    border-radius: 50%;
+}

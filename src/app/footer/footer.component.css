@@ -1,0 +1,16 @@
+.footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    margin-right: 20px;
+}
+
+.footer-section img {
+    height: 25px;
+    margin-right: 10px;
+}
